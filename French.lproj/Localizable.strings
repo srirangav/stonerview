@@ -1,0 +1,34 @@
+/* The same as in prefs panel. */
+"View" = "Affichage";
+"Wireframe" = "Fil de fer";
+"Edges" = "Bordures";
+"Shape" = "Forme";
+"Speed" = "Vitesse";
+"slow" = "lent";
+"fast" = "rapide";
+"Transp." = "Transp.";
+
+/* objects */
+"Random" = "Aléatoire";
+"Quads" = "Carrés";
+"Triangles" = "Triangles";
+"Hexagons" = "Hexagones";
+"Discs" = "Disques";
+"Spheres" = "Sphères";
+"Cubes" = "Cubes";
+"Cones" = "Cones";
+"Toruses" = "Tores";
+
+/* Standard strings. */
+"Main monitor only" = "Moniteur principal uniquement";
+"Check updates" = "Vérifier mise à jour";
+"Cancel" = "Annuler";
+"Save" = "Enregistrer";
+
+/* version checking strings. */
+"Couldn't connect to version database, sorry" = "Impossible de se connecter à la base de données des versions, désolé.";
+"New version available !!" = "Nouvelle version disponible !!";
+"You're up-to-date" = "Vous êtes à jour";
+
+
+

@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ScreenSaverView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {
+                checkUpdates = id; 
+                "closeSheet_cancel" = id; 
+                "closeSheet_save" = id; 
+                updateConfigureSheet = id; 
+            }; 
+            CLASS = StonerView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                IBCancel = id; 
+                IBCheckVersion = id; 
+                IBSave = id; 
+                IBUpdatesInfo = id; 
+                IBalpha = id; 
+                IBalphaTxt = id; 
+                IBedges = id; 
+                IBfast = id; 
+                IBmainMonitorOnly = id; 
+                IBshape = id; 
+                IBshapeTxt = id; 
+                IBslow = id; 
+                IBspeed = id; 
+                IBspeedTxt = id; 
+                IBversionNumberField = id; 
+                IBview = id; 
+                IBwireframe = id; 
+                configureSheet = id; 
+            }; 
+            SUPERCLASS = ScreenSaverView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

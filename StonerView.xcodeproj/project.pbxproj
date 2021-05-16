@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBAB1FF60C444E9A00F49955 /* StonerView.nib in Resources */ = {isa = PBXBuildFile; fileRef = F5B253E0016747AE01000001 /* StonerView.nib */; };
+		CBAB1FF70C444E9E00F49955 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A15EDA6403E4C3EE00A80102 /* Localizable.strings */; };
+		CBAB1FF80C444EA700F49955 /* move.c in Sources */ = {isa = PBXBuildFile; fileRef = F502EBCF01490FD201000001 /* move.c */; };
+		CBAB1FF90C444EA700F49955 /* osc.c in Sources */ = {isa = PBXBuildFile; fileRef = F502EBD001490FD201000001 /* osc.c */; };
+		CBAB1FFA0C444EA700F49955 /* view.c in Sources */ = {isa = PBXBuildFile; fileRef = F502EBD101490FD201000001 /* view.c */; };
+		CBAB1FFB0C444EA700F49955 /* StonerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B253DF016747AE01000001 /* StonerView.m */; };
+		CBAB20C30C444EB700F49955 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0149AE530075FC557F000001 /* ScreenSaver.framework */; };
+		CBAB20C40C444EB700F49955 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5981BA8011C917D01000001 /* OpenGL.framework */; };
+		CBAB20C50C444EB700F49955 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F538DD6B01E0075E01906411 /* AppKit.framework */; };
+		CBAB20C60C444EB700F49955 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B293D50215FCCF0115EA8E /* GLUT.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0149AE530075FC557F000001 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
+		A15EDA6203E4BBF800A80102 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A15EDA6603E4C40700A80102 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A15EDA6703E4C41000A80102 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB5827E20C45052600670E94 /* Copying */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Copying; sourceTree = "<group>"; };
+		CB5827E30C45052600670E94 /* history.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = history.rtf; sourceTree = "<group>"; };
+		CB5827E40C45052600670E94 /* Installation 'n Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Installation 'n Readme.rtf"; sourceTree = "<group>"; };
+		CB5827E50C45052600670E94 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		CBAB1FE30C444CFC00F49955 /* StonerView.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StonerView.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBAB1FE40C444CFC00F49955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F502EBCF01490FD201000001 /* move.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = move.c; sourceTree = "<group>"; };
+		F502EBD001490FD201000001 /* osc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = osc.c; sourceTree = "<group>"; };
+		F502EBD101490FD201000001 /* view.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = view.c; sourceTree = "<group>"; };
+		F538DD6B01E0075E01906411 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		F5981BA8011C917D01000001 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		F59A374D0149817701000001 /* general.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = general.h; sourceTree = "<group>"; };
+		F59A374E0149817701000001 /* move.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = move.h; sourceTree = "<group>"; };
+		F59A374F0149817701000001 /* osc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = osc.h; sourceTree = "<group>"; };
+		F59A37500149817701000001 /* view.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = view.h; sourceTree = "<group>"; };
+		F5B253DE016747AE01000001 /* StonerView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StonerView.h; sourceTree = "<group>"; };
+		F5B253DF016747AE01000001 /* StonerView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StonerView.m; sourceTree = "<group>"; };
+		F5B253E0016747AE01000001 /* StonerView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = StonerView.nib; sourceTree = "<group>"; };
+		F5B293D50215FCCF0115EA8E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBAB1FE10C444CFC00F49955 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBAB20C30C444EB700F49955 /* ScreenSaver.framework in Frameworks */,
+				CBAB20C40C444EB700F49955 /* OpenGL.framework in Frameworks */,
+				CBAB20C50C444EB700F49955 /* AppKit.framework in Frameworks */,
+				CBAB20C60C444EB700F49955 /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00CF041800D24BE97F000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBAB1FE40C444CFC00F49955 /* Info.plist */,
+				F5B253E0016747AE01000001 /* StonerView.nib */,
+				A15EDA6403E4C3EE00A80102 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0149AE500075FABC7F000001 = {
+			isa = PBXGroup;
+			children = (
+				F502EBCD01490FD201000001 /* Sources */,
+				0149AE520075FC557F000001 /* Frameworks */,
+				00CF041800D24BE97F000001 /* Resources */,
+				CB5827E10C4504D000670E94 /* Collateral */,
+				0149AE580075FD537F000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0149AE520075FC557F000001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F538DD6B01E0075E01906411 /* AppKit.framework */,
+				0149AE530075FC557F000001 /* ScreenSaver.framework */,
+				F5981BA8011C917D01000001 /* OpenGL.framework */,
+				F5B293D50215FCCF0115EA8E /* GLUT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0149AE580075FD537F000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBAB1FE30C444CFC00F49955 /* StonerView.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB5827E10C4504D000670E94 /* Collateral */ = {
+			isa = PBXGroup;
+			children = (
+				CB5827E20C45052600670E94 /* Copying */,
+				CB5827E30C45052600670E94 /* history.rtf */,
+				CB5827E40C45052600670E94 /* Installation 'n Readme.rtf */,
+				CB5827E50C45052600670E94 /* README */,
+			);
+			name = Collateral;
+			sourceTree = "<group>";
+		};
+		F502EBCD01490FD201000001 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F5B253DE016747AE01000001 /* StonerView.h */,
+				F5B253DF016747AE01000001 /* StonerView.m */,
+				F59A374D0149817701000001 /* general.h */,
+				F502EBCF01490FD201000001 /* move.c */,
+				F59A374E0149817701000001 /* move.h */,
+				F502EBD101490FD201000001 /* view.c */,
+				F59A37500149817701000001 /* view.h */,
+				F502EBD001490FD201000001 /* osc.c */,
+				F59A374F0149817701000001 /* osc.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBAB1FE20C444CFC00F49955 /* StonerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBAB1FE50C444CFC00F49955 /* Build configuration list for PBXNativeTarget "StonerView" */;
+			buildPhases = (
+				CBAB1FDF0C444CFC00F49955 /* Resources */,
+				CBAB1FE00C444CFC00F49955 /* Sources */,
+				CBAB1FE10C444CFC00F49955 /* Frameworks */,
+				CB8CF3C40C44FD6D00524734 /* Create Distribution Package */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StonerView;
+			productName = StonerView;
+			productReference = CBAB1FE30C444CFC00F49955 /* StonerView.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0149AE4F0075FABC7F000001 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = CBAB1F570C44497900F49955 /* Build configuration list for PBXProject "StonerView" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Italian,
+			);
+			mainGroup = 0149AE500075FABC7F000001;
+			productRefGroup = 0149AE580075FD537F000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBAB1FE20C444CFC00F49955 /* StonerView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBAB1FDF0C444CFC00F49955 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBAB1FF60C444E9A00F49955 /* StonerView.nib in Resources */,
+				CBAB1FF70C444E9E00F49955 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB8CF3C40C44FD6D00524734 /* Create Distribution Package */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Copying",
+				"$(SRCROOT)/history.rtf",
+				"$(SRCROOT)/Installation 'n Readme.rtf",
+				"$(SRCROOT)/README",
+				"$(TARGET_BUILD_DIR)/$(FULL_PRODUCT_NAME)",
+			);
+			name = "Create Distribution Package";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# There should be some call to stat here\nDISTRIBUTIONNAME=\"StonerView_$CURRENT_PROJECT_VERSION\"\nFOLDERNAME=\"/tmp/$DISTRIBUTIONNAME\"\nIMAGEPATH=\"$FOLDERNAME\".dmg\n\nrm -rf \"$FOLDERNAME\"\nrm -f \"$IMAGEPATH\"\nmkdir \"$FOLDERNAME\"\ncp \"$SRCROOT/history.rtf\" \"$FOLDERNAME\"\ncp \"$SRCROOT/Copying\" \"$FOLDERNAME\"\ncp \"$SRCROOT/Installation 'n Readme.rtf\" \"$FOLDERNAME\"\ncp \"$SRCROOT/README\" \"$FOLDERNAME\"\ncp -r \"$TARGET_BUILD_DIR/$FULL_PRODUCT_NAME\" \"$FOLDERNAME\"\n\nhdiutil create -srcfolder \"$FOLDERNAME\" -quiet \"$IMAGEPATH\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBAB1FE00C444CFC00F49955 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBAB1FF80C444EA700F49955 /* move.c in Sources */,
+				CBAB1FF90C444EA700F49955 /* osc.c in Sources */,
+				CBAB1FFA0C444EA700F49955 /* view.c in Sources */,
+				CBAB1FFB0C444EA700F49955 /* StonerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A15EDA6403E4C3EE00A80102 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A15EDA6203E4BBF800A80102 /* English */,
+				A15EDA6603E4C40700A80102 /* French */,
+				A15EDA6703E4C41000A80102 /* Italian */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBAB1F580C44497900F49955 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				CURRENT_PROJECT_VERSION = 1.5.1;
+				GCC_ENABLE_OBJC_GC = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_PREPROCESS = YES;
+				OTHER_CFLAGS = "-Wall";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+			};
+			name = Development;
+		};
+		CBAB1F590C44497900F49955 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				CURRENT_PROJECT_VERSION = 1.5.1;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_OBJC_GC = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_PREPROCESS = YES;
+				OTHER_CFLAGS = "-Wall";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		CBAB1F5A0C44497900F49955 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				CURRENT_PROJECT_VERSION = 1.5.1;
+				GCC_ENABLE_OBJC_GC = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_PREPROCESS = YES;
+				OTHER_CFLAGS = "-Wall";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+			};
+			name = Default;
+		};
+		CBAB1FE60C444CFC00F49955 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PREBINDING = NO;
+				PRODUCT_NAME = StonerView;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Development;
+		};
+		CBAB1FE70C444CFC00F49955 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PREBINDING = NO;
+				PRODUCT_NAME = StonerView;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Deployment;
+		};
+		CBAB1FE80C444CFC00F49955 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = 4.0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PREBINDING = NO;
+				PRODUCT_NAME = StonerView;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBAB1F570C44497900F49955 /* Build configuration list for PBXProject "StonerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBAB1F580C44497900F49955 /* Development */,
+				CBAB1F590C44497900F49955 /* Deployment */,
+				CBAB1F5A0C44497900F49955 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		CBAB1FE50C444CFC00F49955 /* Build configuration list for PBXNativeTarget "StonerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBAB1FE60C444CFC00F49955 /* Development */,
+				CBAB1FE70C444CFC00F49955 /* Deployment */,
+				CBAB1FE80C444CFC00F49955 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0149AE4F0075FABC7F000001 /* Project object */;
+}
