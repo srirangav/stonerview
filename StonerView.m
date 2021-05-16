@@ -79,7 +79,7 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     mainMonitorOnly = [defaults boolForKey:@"mainMonitorOnly"];
     wireframe = [defaults boolForKey:@"wireframe"];
     edges     = [defaults boolForKey:@"edges"];
-    shape     = [defaults integerForKey:@"shape"];
+    shape     = (int)[defaults integerForKey:@"shape"];
     speed     = [defaults floatForKey:@"speed"];
     alpha     = [defaults floatForKey:@"alpha"];
     
@@ -196,7 +196,12 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
 #endif
     
     // If your screensaver has a ConfigureSheet, load it here
-    if( ! configureSheet ) [NSBundle loadNibNamed:@"StonerView" owner:self];
+    // update to new version of loadNibName for 10.8+
+    if( ! configureSheet ) {
+            [thisBundle loadNibNamed: @"StonerView"
+                               owner: self
+                     topLevelObjects: nil];
+    }
     
     [IBversionNumberField setStringValue:kVersion];
     [IBUpdatesInfo setStringValue:@""];
@@ -265,7 +270,7 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
 
     wireframe	 = ( [IBwireframe state] == NSOnState ) ? true : false;
     edges	 = ( [IBedges state] == NSOnState ) ? true : false;
-    shape        = [IBshape indexOfSelectedItem];
+    shape        = (int)[IBshape indexOfSelectedItem];
     speed        = [IBspeed floatValue];
     alpha        = [IBalpha floatValue]/10.0;
 
@@ -327,7 +332,7 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     
     wireframe_test = ( [IBwireframe state] == NSOnState ) ? true : false;
     edges_test	   = ( [IBedges state] == NSOnState ) ? true : false;
-    shape_test     = [IBshape indexOfSelectedItem];
+    shape_test     = (int)[IBshape indexOfSelectedItem];
     speed_test     = [IBspeed floatValue];
     alpha_test     = [IBalpha floatValue]/10.0;
     
