@@ -23,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		0149AE530075FC557F000001 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
+		265BBC9F26512C540063454E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		265BBCA026512C570063454E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265EA21226510F8700BF8073 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265EA21326510F8900BF8073 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265EA21426510F8C00BF8073 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -241,6 +243,8 @@
 				265EA21226510F8700BF8073 /* en */,
 				265EA21326510F8900BF8073 /* it */,
 				265EA21426510F8C00BF8073 /* fr */,
+				265BBC9F26512C540063454E /* de */,
+				265BBCA026512C570063454E /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
