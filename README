@@ -1,4 +1,4 @@
-StonerView 1.3 (Unix/GL version)
+StonerView 1.5.2 (MacOS X Version)
     Copyright 1998-2001 by Andrew Plotkin.
 
 For the latest version, source code, and links to more of my stuff, see:
@@ -62,13 +62,17 @@ size.
 
 Version history:
 
+1.5 (Mac OSX universal binary port): contributed by Alexander v. Below
+
+1.4 (Mac OSX port): contributed by Tommaso Pecorella 
+
 1.3: Jamie Zawinski (jwz@jwz.org) contributed a pile of code to change 
-       the framework from GLUT to straight GL. This allows the --root 
-       option to work, and therefore it works with the xscreensaver
-       package.
+     the framework from GLUT to straight GL. This allows the --root 
+     option to work, and therefore it works with the xscreensaver
+     package.
 
 1.2: I forgot the sliding rainbow effect on the chain of polygons!
-       Can you believe that? I'm such a doof.
+     Can you believe that? I'm such a doof.
      Also, Unix/GL version.
 
 1.1: Original release, I think.
