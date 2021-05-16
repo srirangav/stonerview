@@ -215,9 +215,9 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     // If your screensaver has a ConfigureSheet, load it here
     // update to new version of loadNibName for 10.8+
     if( ! configureSheet ) {
-            [thisBundle loadNibNamed: @"StonerView"
-                               owner: self
-                     topLevelObjects: nil];
+           [thisBundle loadNibNamed: @"StonerView"
+                              owner: self
+                    topLevelObjects: nil];
     }
     
     [IBversionNumberField setStringValue:kVersion];
@@ -320,7 +320,8 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     set_transparency(alpha);
     [self setAnimationTimeInterval:default_speed/speed];
 
-    [NSApp endSheet:configureSheet];
+    //[NSApp endSheet:configureSheet];
+    [configureSheet orderOut:sender];
 }
 
 - (IBAction) closeSheet_cancel:(id) sender {
@@ -329,11 +330,12 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     NSLog( @"closeSheet_cancel" );
 #endif
     
-    [NSApp endSheet:configureSheet];
-    
     params_update(wireframe, edges, shape);
     set_transparency(alpha);
     [self setAnimationTimeInterval:default_speed/speed];
+
+    //[NSApp endSheet:configureSheet];
+    [configureSheet orderOut:sender];
 }
 
 - (IBAction)updateConfigureSheet:(id) sender
