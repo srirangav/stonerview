@@ -375,6 +375,6 @@ rand_range(int min, int max)
 	unsigned int    diff = (max + 1) - min;
 	if (diff <= 1)
 		return min;
-	res = random() % diff;
+    res = arc4random_uniform(max);
 	return min + res;
 }

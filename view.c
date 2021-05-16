@@ -216,7 +216,7 @@ __private_extern__ void win_draw(elem_t elist[])
         display_shape = (shape == 0) ? el->shape+1 : shape;
 
         glNormal3f(0.0, 0.0, 1.0);
-	glTranslatef(el->pos[0], el->pos[1], el->pos[2]);
+        glTranslatef(el->pos[0], el->pos[1], el->pos[2]);
 
         if (addedges || wireframe) {
 
@@ -232,7 +232,7 @@ __private_extern__ void win_draw(elem_t elist[])
             
         }
         
-	glTranslatef(-el->pos[0], -el->pos[1], -el->pos[2]);
+        glTranslatef(-el->pos[0], -el->pos[1], -el->pos[2]);
     }
 
     glPopMatrix();
@@ -256,7 +256,9 @@ __private_extern__ void win_reshape(int width, int height)
     glTranslatef(0.0, 0.0, -40.0);
 }
 
-__private_extern__ void params_update(int upd_wireframe, int upd_edges, int upd_shape)
+__private_extern__ void params_update(int upd_wireframe,
+                                      int upd_edges,
+                                      int upd_shape)
 {
     wireframe = upd_wireframe;
     addedges = upd_edges;

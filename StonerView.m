@@ -4,9 +4,11 @@
 //
 //  Copyright 1998-2011 by Andrew Plotkin, <erkyrath@eblong.com>.
 //  Ported to Mac by Tommaso Pecorella, <t.pecorella@inwind.it>.
-//	Modified by Alexander von Below, <alex@vonbelow.com> Wed Jul 11 10:09:26 CEST 2007
-//	  (Changes are prefixed 'avb')
+//	Modified by Alexander von Below, <alex@vonbelow.com>
+//      Wed Jul 11 10:09:26 CEST 2007 (Changes are prefixed 'avb')
 //	Further modified by Andrew Plotkin, Mar 24 2011
+//  Updated for BigSur (MacOSX 11) by Sriranga Veeraraghavan
+//      <ranga@calalum.org>, May 16, 2021
 //
 
 #import "StonerView.h"
@@ -50,6 +52,12 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
 	
 	NSOpenGLPixelFormat *format = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attribs] autorelease];
 		
+    /* enable OpenGL hi-res display support
+     https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html#//apple_ref/doc/uid/TP40012302-CH10-SW35
+     */
+        
+    [self  setWantsBestResolutionOpenGLSurface: YES];
+        
         _view = [[[NSOpenGLView alloc] initWithFrame:NSZeroRect pixelFormat:format] autorelease];
         
         [self addSubview:_view];
@@ -104,7 +112,16 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     
     if (!_initedGL) {
         setup_window();
-        win_reshape([self frame].size.width, [self frame].size.height);
+
+        /*  support for high resolution displays
+            https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html#//apple_ref/doc/uid/TP40012302-CH10-SW35
+         */
+        NSRect backingBounds =
+            [self convertRectToBacking:[self bounds]];
+        GLsizei backingPixelWidth  = (GLsizei)(backingBounds.size.width);
+        GLsizei backingPixelHeight = (GLsizei)(backingBounds.size.height);
+        
+        win_reshape(backingPixelWidth, backingPixelHeight);
         if( init_move() ) {
             params_update(wireframe, edges, shape);
             move_increment(elist);
