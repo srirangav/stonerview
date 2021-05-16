@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265F017626512451006DE5E4 /* StonerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265F017526512451006DE5E4 /* StonerView.xib */; };
 		26FF926A265117AF0056B3D8 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FF9268265117AF0056B3D8 /* thumbnail.png */; };
 		26FF926B265117AF0056B3D8 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26FF9269265117AF0056B3D8 /* thumbnail@2x.png */; };
-		CBAB1FF60C444E9A00F49955 /* StonerView.nib in Resources */ = {isa = PBXBuildFile; fileRef = F5B253E0016747AE01000001 /* StonerView.nib */; };
 		CBAB1FF70C444E9E00F49955 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A15EDA6403E4C3EE00A80102 /* Localizable.strings */; };
 		CBAB1FF80C444EA700F49955 /* move.c in Sources */ = {isa = PBXBuildFile; fileRef = F502EBCF01490FD201000001 /* move.c */; };
 		CBAB1FF90C444EA700F49955 /* osc.c in Sources */ = {isa = PBXBuildFile; fileRef = F502EBD001490FD201000001 /* osc.c */; };
@@ -26,6 +26,7 @@
 		265EA21226510F8700BF8073 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265EA21326510F8900BF8073 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		265EA21426510F8C00BF8073 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		265F017526512451006DE5E4 /* StonerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StonerView.xib; sourceTree = "<group>"; };
 		26FF9268265117AF0056B3D8 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		26FF9269265117AF0056B3D8 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		CB5827E20C45052600670E94 /* Copying */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Copying; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		F59A37500149817701000001 /* view.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = view.h; sourceTree = "<group>"; };
 		F5B253DE016747AE01000001 /* StonerView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StonerView.h; sourceTree = "<group>"; };
 		F5B253DF016747AE01000001 /* StonerView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StonerView.m; sourceTree = "<group>"; };
-		F5B253E0016747AE01000001 /* StonerView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = StonerView.nib; sourceTree = "<group>"; };
 		F5B293D50215FCCF0115EA8E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 				26FF9268265117AF0056B3D8 /* thumbnail.png */,
 				26FF9269265117AF0056B3D8 /* thumbnail@2x.png */,
 				CBAB1FE40C444CFC00F49955 /* Info.plist */,
-				F5B253E0016747AE01000001 /* StonerView.nib */,
+				265F017526512451006DE5E4 /* StonerView.xib */,
 				A15EDA6403E4C3EE00A80102 /* Localizable.strings */,
 			);
 			name = Resources;
@@ -189,7 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBAB1FF60C444E9A00F49955 /* StonerView.nib in Resources */,
+				265F017626512451006DE5E4 /* StonerView.xib in Resources */,
 				26FF926B265117AF0056B3D8 /* thumbnail@2x.png in Resources */,
 				26FF926A265117AF0056B3D8 /* thumbnail.png in Resources */,
 				CBAB1FF70C444E9E00F49955 /* Localizable.strings in Resources */,
@@ -406,6 +406,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eblong.screensaver.stonerview;
 				PRODUCT_NAME = StonerView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -432,6 +433,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eblong.screensaver.stonerview;
 				PRODUCT_NAME = StonerView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -456,6 +458,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eblong.screensaver.stonerview;
 				PRODUCT_NAME = StonerView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
