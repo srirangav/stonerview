@@ -52,7 +52,8 @@ __private_extern__ void setup_window()
     glEnable(GL_LINE_SMOOTH);
     glEnable(GL_BLEND);
     // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);    
-    glBlendFunc(GL_SRC_ALPHA,GL_ONE);	// Set The Blending Function For Translucency
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE);	// Set The Blending Function For
+                                        // Translucency
     setup_shapes();
 }
 
@@ -139,7 +140,8 @@ __private_extern__ void setup_shapes()
     glNewList( theShapesWire[discs], GL_COMPILE );
     glBegin(GL_LINE_LOOP);
     for( i=0; i<vertex; i++ )
-        glVertex3f( 0.09*(cos((2*M_PI*i)/vertex)),  0.09*(sin((2*M_PI*i)/vertex)), 0.0 );
+        glVertex3f( 0.09*(cos((2*M_PI*i)/vertex)),
+                    0.09*(sin((2*M_PI*i)/vertex)), 0.0 );
     glEnd();
     glEndList();
 
@@ -147,7 +149,8 @@ __private_extern__ void setup_shapes()
     glBegin(GL_TRIANGLE_FAN);
     glVertex3f( 0.0,  0.0, 0.0 );
     for( i=0; i<vertex; i++ )
-        glVertex3f( 0.09*(cos((2*M_PI*i)/vertex)),  0.09*(sin((2*M_PI*i)/vertex)), 0.0 );
+        glVertex3f( 0.09*(cos((2*M_PI*i)/vertex)),
+                    0.09*(sin((2*M_PI*i)/vertex)), 0.0 );
     glVertex3f( 0.09*(cos(0)),  0.09*(sin(0)), 0.0 );
     glEnd();
     glEndList();
@@ -220,7 +223,9 @@ __private_extern__ void win_draw(elem_t elist[])
 
         if (addedges || wireframe) {
 
-            glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (wireframe ? white : grey));
+            glMaterialfv(GL_FRONT,
+                         GL_AMBIENT_AND_DIFFUSE,
+                         (wireframe ? white : grey));
             glCallList(theShapesWire[display_shape]);
         }
 

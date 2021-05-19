@@ -23,13 +23,15 @@
  * without moving others. This is a very restricted model, but it's exactly
  * what's needed for this system.
  * 
- * Now, there's an additional complication. To get the rippling effect, we don't
- * pull out single values, but *sets* of N elements at a time. (N is defined
- * by NUM_ELS below.) So f(i) is really an ordered N-tuple (f(i,0), f(i,1),
- * f(i,2), f(i,3), f(i,4)). And f() generates an infinite stream of these
- * N-tuples. The osc_get() call really has two parameters; you call
- * osc_get(f, n) to find the n'th element of the current N-tuple. Remember, n
- * must be between 0 and n-1.
+ * Now, there's an additional complication. To get the rippling effect, we
+ * don't pull out single values, but *sets* of N elements at a time. (N is
+ * defined by NUM_ELS below.) So f(i) is really an ordered N-tuple
+ * (f(i,0), f(i,1), f(i,2), f(i,3), f(i,4)). And f() generates an infinite
+ * stream of these N-tuples.
+ *
+ * The osc_get() call really has two parameters; you call osc_get(f, n) to
+ * find the n'th element of the current N-tuple. Remember, n must be between
+ * 0 and n-1.
  * 
  * (Do *not* try to get an infinite stream f(i) by calling osc_get(f, i) for i
  * ranging to infinity! Use osc_increment() to advance to the next N-tuple in
@@ -39,7 +41,7 @@
 #define NUM_ELS (40)		/* Forty polygons at a time. */
 
 #define NUM_PHASES (4)		/* Some of the osc functions switch between P
-				 * alternatives. We arbitrarily choose P=4. */
+                             * alternatives. We arbitrarily choose P=4. */
 
 /*
  * Here are the functions which are available. Constant: f(i,n) = k. Always
@@ -76,9 +78,9 @@
  * where RandPhaser moved sequentially through 0..3, VeryRandPhaser picks a
  * random value between 0 and size-1.
  * 
- * Note that Buffer only looks up g(i,0) -- it only uses the 0th elements of the
- * N-tuples that g generates. This saves time and memory, but it means that
- * certain things don't work. For example, if you try to build
+ * Note that Buffer only looks up g(i,0) -- it only uses the 0th elements of
+ * the N-tuples that g generates. This saves time and memory, but it means
+ * that certain things don't work. For example, if you try to build
  * Buffer(Linear(A,B)), B will have no effect, because Linear computes a(i,n)
  * + n*b(i,n), and inside the Buffer, n is always zero. On the other hand,
  * Linear(Buffer(A),Buffer(B)) works fine, and is probably what you wanted
@@ -99,10 +101,10 @@
 
 /* The osc_t structure itself. */
 typedef struct osc_struct {
-	int             type;	/* An otyp_* constant. */
+	int             type;	 /* An otyp_* constant. */
 
-	struct osc_struct *next;/* osc.c uses this to maintain a private
-				 * linked list of all osc_t objects created. */
+	struct osc_struct *next; /* osc.c uses this to maintain a private
+                              * linked list of all osc_t objects created. */
 
 	/* Union of the data used by all the possible osc_t functions. */
 	union {
@@ -160,13 +162,18 @@ __private_extern__ osc_t   *new_osc_constant(int val);
 __private_extern__ osc_t   *new_osc_bounce(int min, int max, int step);
 __private_extern__ osc_t   *new_osc_wrap(int min, int max, int step);
 __private_extern__ osc_t   *new_osc_phaser(int phaselen);
-__private_extern__ osc_t   *new_osc_randphaser(int minphaselen, int maxphaselen);
-__private_extern__ osc_t   *new_osc_veryrandphaser(int minphaselen, int maxphaselen, int size);
+__private_extern__ osc_t   *new_osc_randphaser(int minphaselen,
+                                               int maxphaselen);
+__private_extern__ osc_t   *new_osc_veryrandphaser(int minphaselen,
+                                                   int maxphaselen,
+                                                   int size);
 __private_extern__ osc_t   *new_osc_velowrap(int min, int max, osc_t * step);
 __private_extern__ osc_t   *new_osc_linear(osc_t * base, osc_t * diff);
 __private_extern__ osc_t   *new_osc_buffer(osc_t * val);
-__private_extern__ osc_t   *new_osc_multiplex(osc_t * sel, osc_t * ox0, osc_t * ox1,
-		  osc_t * ox2, osc_t * ox3);
-
+__private_extern__ osc_t   *new_osc_multiplex(osc_t * sel,
+                                              osc_t * ox0,
+                                              osc_t * ox1,
+                                              osc_t * ox2,
+                                              osc_t * ox3);
 __private_extern__ int      osc_get(osc_t * osc, int el);
 __private_extern__ void     osc_increment(void);

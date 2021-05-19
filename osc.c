@@ -106,7 +106,11 @@ __private_extern__ osc_t *new_osc_velowrap(int min, int max, osc_t * step)
 	return osc;
 }
 
-__private_extern__ osc_t *new_osc_multiplex(osc_t * sel, osc_t * ox0, osc_t * ox1, osc_t * ox2, osc_t * ox3)
+__private_extern__ osc_t *new_osc_multiplex(osc_t * sel,
+                                            osc_t * ox0,
+                                            osc_t * ox1,
+                                            osc_t * ox2,
+                                            osc_t * ox3)
 {
 	osc_t          *osc = create_osc(otyp_Multiplex);
 	if (!osc)
@@ -154,7 +158,9 @@ __private_extern__ osc_t *new_osc_randphaser(int minphaselen, int maxphaselen)
 	return osc;
 }
 
-__private_extern__ osc_t *new_osc_veryrandphaser(int minphaselen, int maxphaselen, int size)
+__private_extern__ osc_t *new_osc_veryrandphaser(int minphaselen,
+                                                 int maxphaselen,
+                                                 int size)
 {
 	osc_t          *osc = create_osc(otyp_VeryRandPhaser);
 	if (!osc)
@@ -326,7 +332,8 @@ __private_extern__ void osc_increment()
 				ox->count++;
 				if (ox->count >= ox->curphaselen) {
 					ox->count = 0;
-					ox->curphaselen = rand_range(ox->minphaselen, ox->maxphaselen);
+					ox->curphaselen = rand_range(ox->minphaselen,
+                                                 ox->maxphaselen);
 					ox->curphase++;
 					if (ox->curphase >= NUM_PHASES)
 						ox->curphase = 0;
@@ -339,7 +346,8 @@ __private_extern__ void osc_increment()
 				ox->count++;
 				if (ox->count >= ox->curphaselen) {
 					ox->count = 0;
-					ox->curphaselen = rand_range(ox->minphaselen, ox->maxphaselen);
+					ox->curphaselen = rand_range(ox->minphaselen,
+                                                 ox->maxphaselen);
 					ox->curphase = rand_range(0, ox->size-1);
 				}
 				break;

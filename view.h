@@ -11,4 +11,6 @@ __private_extern__ void setup_window(void);
 __private_extern__ void setup_shapes(void);
 __private_extern__ void win_draw(elem_t elist[]);
 __private_extern__ void win_reshape(int width, int height);
-__private_extern__ void params_update(int upd_wireframe, int upd_edges, int upd_shape);
+__private_extern__ void params_update(int upd_wireframe,
+                                      int upd_edges,
+                                      int upd_shape);

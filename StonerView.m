@@ -29,49 +29,59 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
 {
     NSString* version;
 
-    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kName];
+    ScreenSaverDefaults *defaults =
+        [ScreenSaverDefaults defaultsForModuleWithName: kName];
 
-    if (![super initWithFrame:frameRect isPreview:preview]) return nil;
-    
-    // Do your subclass initialization here
+    if (![super initWithFrame:frameRect isPreview:preview])
+    {
+        return nil;
+    }
     
 #ifdef LOG_DEBUG
     NSLog( @"initWithFrame" );
 #endif
 
     if (self) {
-	NSOpenGLPixelFormatAttribute attribs[] =
-        {	NSOpenGLPFAAccelerated,
-//		NSOpenGLPFADepthSize, 16,
-                NSOpenGLPFAColorSize, 16,
-		NSOpenGLPFAMinimumPolicy,
-		NSOpenGLPFAMaximumPolicy,
-//		NSOpenGLPFAClosestPolicy,
-                0
+
+        NSOpenGLPixelFormatAttribute attribs[] = {
+            NSOpenGLPFAAccelerated,
+//		    NSOpenGLPFADepthSize, 16,
+            NSOpenGLPFAColorSize, 16,
+            NSOpenGLPFAMinimumPolicy,
+            NSOpenGLPFAMaximumPolicy,
+//		    NSOpenGLPFAClosestPolicy,
+            0
         };
 	
-	NSOpenGLPixelFormat *format = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attribs] autorelease];
-		
-    /* enable OpenGL hi-res display support
-     https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html#//apple_ref/doc/uid/TP40012302-CH10-SW35
-     */
-        
-    [self  setWantsBestResolutionOpenGLSurface: YES];
-        
-        _view = [[[NSOpenGLView alloc] initWithFrame:NSZeroRect pixelFormat:format] autorelease];
-        
+        NSOpenGLPixelFormat *format =
+            [[[NSOpenGLPixelFormat alloc] initWithAttributes: attribs]
+             autorelease];
+		        
+        _view = [[[NSOpenGLView alloc] initWithFrame: NSZeroRect
+                                         pixelFormat: format]
+                 autorelease];
+
+        /* enable OpenGL hi-res display support
+           https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html#//apple_ref/doc/uid/TP40012302-CH10-SW35
+         */
+
+        [_view setWantsBestResolutionOpenGLSurface: YES];
+
         [self addSubview:_view];
     }
     
-
 	// avb: There is a way to set factory defaults
-	// This will have to be tweaked when a new version wants to definitely change the users preferences
-/*
- if( ![version isEqualToString:kVersion] || (version == NULL) ) {
-	 // first time ever !! 
-*/
-	NSDictionary * applicationDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-			kVersion, @"version",
+	// This will have to be tweaked when a new version wants to
+    // definitely change the users preferences
+
+    /*
+        if( ![version isEqualToString:kVersion] || (version == NULL) ) {
+        // first time ever !!
+     */
+
+    NSDictionary *applicationDefaults =
+        [NSDictionary dictionaryWithObjectsAndKeys:
+            kVersion, @"version",
 			kCFBooleanFalse, @"mainMonitorOnly",
 			kCFBooleanFalse,@"wireframe",
 			kCFBooleanFalse, @"edges",
@@ -96,9 +106,6 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
 
 - (void)animateOneFrame
 {
-    // Do your animation stuff here.
-    // If you want to use drawRect: just add setNeedsDisplay:YES to this method
-    
 #ifdef LOG_DEBUG
     // NSLog( @"animateOneFrame" );
 #endif
@@ -117,7 +124,7 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
             https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/CapturingScreenContents/CapturingScreenContents.html#//apple_ref/doc/uid/TP40012302-CH10-SW35
          */
         NSRect backingBounds =
-            [self convertRectToBacking:[self bounds]];
+            [_view convertRectToBacking:[_view bounds]];
         GLsizei backingPixelWidth  = (GLsizei)(backingBounds.size.width);
         GLsizei backingPixelHeight = (GLsizei)(backingBounds.size.height);
         
@@ -223,10 +230,18 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     [IBversionNumberField setStringValue:kVersion];
     [IBUpdatesInfo setStringValue:@""];
 
-    [IBview setTitle:[thisBundle localizedStringForKey:@"View" value:@"" table:@""]];
-    [IBwireframe setTitle:[thisBundle localizedStringForKey:@"Wireframe" value:@"" table:@""]];
+    [IBview setTitle: [thisBundle localizedStringForKey: @"View"
+                                                  value: @""
+                                                  table: @""]];
+
+    [IBwireframe setTitle: [thisBundle localizedStringForKey: @"Wireframe"
+                                                       value: @""
+                                                       table: @""]];
     [IBwireframe setState:(wireframe ? NSOnState : NSOffState)];
-    [IBedges setTitle:[thisBundle localizedStringForKey:@"Edges" value:@"" table:@""]];
+
+    [IBedges setTitle: [thisBundle localizedStringForKey: @"Edges"
+                                                   value: @""
+                                                   table: @""]];
     [IBedges setState:(edges ? NSOnState : NSOffState)];
 
     [IBshapeTxt setStringValue:
@@ -264,10 +279,25 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     [IBalpha setFloatValue:alpha*10];
 
     [IBmainMonitorOnly setState:(mainMonitorOnly ? NSOnState : NSOffState)];
-    [IBmainMonitorOnly setTitle:[thisBundle localizedStringForKey:@"Main monitor only" value:@"" table:@""]];
-    [IBCheckVersion setTitle:[thisBundle localizedStringForKey:@"Check updates" value:@"" table:@""]];
-    [IBCancel setTitle:[thisBundle localizedStringForKey:@"Cancel" value:@"" table:@""]];
-    [IBSave setTitle:[thisBundle localizedStringForKey:@"Save" value:@"" table:@""]];
+
+    [IBmainMonitorOnly setTitle:
+        [thisBundle localizedStringForKey: @"Main monitor only"
+                                    value: @""
+                                    table: @""]];
+
+    [IBCheckVersion setTitle:
+        [thisBundle localizedStringForKey: @"Check updates"
+                                    value: @""
+                                    table: @""]];
+
+    [IBCancel setTitle:
+        [thisBundle localizedStringForKey: @"Cancel"
+                                    value: @""
+                                    table: @""]];
+    
+    [IBSave setTitle: [thisBundle localizedStringForKey: @"Save"
+                                                  value: @""
+                                                  table: @""]];
 
     return configureSheet;
 }
@@ -277,13 +307,15 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     int thisScreen;
     int mainScreen;
 
-    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:kName];
+    ScreenSaverDefaults *defaults =
+        [ScreenSaverDefaults defaultsForModuleWithName:kName];
     
 #ifdef LOG_DEBUG
     NSLog( @"closeSheet_save" );
 #endif
 
-    mainMonitorOnly = ( [IBmainMonitorOnly state] == NSOnState ) ? true : false;
+    mainMonitorOnly =
+        ( [IBmainMonitorOnly state] == NSOnState ) ? true : false;
 
     wireframe	 = ( [IBwireframe state] == NSOnState ) ? true : false;
     edges	 = ( [IBedges state] == NSOnState ) ? true : false;
@@ -367,29 +399,40 @@ CFBundleGetBundleWithIdentifier(CFSTR("com.eblong.screensaver.stonerview")),CFST
     NSString *theVersion;
     NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
 
-    testVersionString = [NSString stringWithContentsOfURL:[NSURL URLWithString:kCurrentVersionsFile] encoding:kCFStringEncodingUTF8 error:nil];
+    testVersionString =
+        [NSString stringWithContentsOfURL:
+            [NSURL URLWithString: kCurrentVersionsFile]
+                        encoding: kCFStringEncodingUTF8
+                           error: nil];
 
     if( testVersionString == nil ) {
         // no connection with the server
         [IBUpdatesInfo setStringValue:
-            [thisBundle localizedStringForKey:@"Couldn't download version information." value:@"" table:@""]];
+            [thisBundle localizedStringForKey:
+                @"Couldn't download version information."
+                                        value: @""
+                                        table: @""]];
     }
     else {
         theVersionDict = [testVersionString propertyList];
         theVersion = [theVersionDict objectForKey:kName];
 
         if ( ![theVersion isEqualToString:kVersion] ) {
-            //hopefully our version numbers will never be going down...
-            //also takes care of going from MyGreatApp? 7.5 to SuperMyGreatApp? Pro 1.0
+            // hopefully our version numbers will never be going down...
+            // also takes care of going from MyGreatApp? 7.5 to
+            // SuperMyGreatApp? Pro 1.0
             [IBUpdatesInfo setStringValue:
-                [thisBundle localizedStringForKey:@"New version available!" value:@"" table:@""]];
+                [thisBundle localizedStringForKey: @"New version available!"
+                                            value: @""
+                                            table: @""]];
         }
         else {
             [IBUpdatesInfo setStringValue:
-                [thisBundle localizedStringForKey:@"You're up-to-date!" value:@"" table:@""]];
+                [thisBundle localizedStringForKey: @"You're up-to-date!"
+                                            value: @""
+                                            table: @""]];
         }
     }
 }
-
 
 @end
